@@ -9,7 +9,7 @@ function toggleMenu(){
 /* TYPING EFFECT */
 
 const text =
-"Full Stack Developer & AI Enthusiast";
+"Full Stack Developer ";
 
 let index = 0;
 
