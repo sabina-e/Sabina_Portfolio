@@ -1,407 +1,363 @@
+/* =========================
+   RESET
+========================= */
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial;
+  font-family:Arial,sans-serif;
 }
 
 html{
   scroll-behavior:smooth;
 }
 
+/* =========================
+   BACKGROUND (COZY PINTEREST STYLE)
+========================= */
+
 body{
-
   background:
-  linear-gradient(
-  135deg,
-  #0f172a,
-  #111827,
-  #1e293b
-  );
+    radial-gradient(circle at top left, #f7f3eb, transparent 60%),
+    radial-gradient(circle at bottom right, #e7eddc, transparent 55%),
+    linear-gradient(135deg, #f3eee5, #f7f3eb);
 
-  color:#f8fafc;
-
+  color:#3e4038;
   overflow-x:hidden;
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 
 nav{
-
   display:flex;
-
   justify-content:space-between;
-
   align-items:center;
 
-  padding:20px 10%;
+  padding:18px 10%;
 
-  background:#1e293b;
+  background:rgba(255,250,244,0.75);
+  backdrop-filter:blur(15px);
+
+  border-bottom:1px solid #e6ddd0;
 
   position:sticky;
-
   top:0;
-
   z-index:1000;
 }
 
 .logo{
-  color:#38bdf8;
+  color:#5f7146;
+  font-size:28px;
+  font-weight:bold;
 }
 
 nav ul{
-
   display:flex;
-
-  gap:25px;
-
+  gap:22px;
   list-style:none;
 }
 
 nav a{
-
   text-decoration:none;
-
-  color:white;
-
+  color:#4d5147;
   transition:0.3s;
 }
 
 nav a:hover{
-  color:#38bdf8;
+  color:#7b8f5c;
 }
 
+/* mobile menu */
 .menu-toggle{
-
   display:none;
-
   font-size:30px;
-
   cursor:pointer;
+  color:#4d5147;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
-
-  height:100vh;
+  min-height:100vh;
 
   display:flex;
-
   flex-direction:column;
-
   justify-content:center;
-
   align-items:center;
 
   text-align:center;
-
   padding:20px;
 
   position:relative;
 }
 
+/* soft glowing background */
 .hero::before{
-
   content:"";
-
   position:absolute;
 
-  width:350px;
+  width:500px;
+  height:500px;
 
-  height:350px;
+  background:radial-gradient(circle, #a8bb87, transparent 70%);
+  filter:blur(120px);
 
-  background:#38bdf8;
+  opacity:0.35;
+  z-index:-2;
+}
 
-  filter:blur(140px);
+.hero::after{
+  content:"";
+  position:absolute;
 
-  opacity:0.15;
+  width:300px;
+  height:300px;
 
+  background:radial-gradient(circle, #c7b08a, transparent 70%);
+  filter:blur(100px);
+
+  opacity:0.25;
   z-index:-1;
 }
 
 .hero h1{
-
-  font-size:65px;
-
-  margin-bottom:20px;
+  font-size:60px;
+  color:#3e4038;
+  margin-bottom:15px;
 }
 
 .hero p{
-
-  font-size:24px;
-
-  color:#cbd5e1;
+  font-size:20px;
+  color:#6d7264;
 }
 
-.hero-buttons{
-
-  margin-top:30px;
-
-  display:flex;
-
-  gap:20px;
-
-  flex-wrap:wrap;
-}
-
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
 
 button{
-
-  padding:12px 25px;
+  padding:12px 22px;
 
   border:none;
+  border-radius:14px;
 
-  background:#38bdf8;
-
+  background:linear-gradient(135deg,#7b8f5c,#6f8353);
   color:white;
-
-  border-radius:10px;
 
   cursor:pointer;
 
-  transition:0.3s;
+  font-size:15px;
 
-  font-size:16px;
+  box-shadow:0 6px 15px rgba(123,143,92,0.25);
+
+  transition:0.3s;
 }
 
 button:hover{
-
-  transform:scale(1.05);
-
-  background:#0ea5e9;
+  transform:translateY(-4px);
+  box-shadow:0 10px 20px rgba(123,143,92,0.35);
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 
 section{
-  padding:100px 10%;
+  padding:90px 10%;
 }
 
 .section-title{
-
   text-align:center;
-
-  font-size:50px;
-
-  margin-bottom:50px;
-
-  color:#38bdf8;
+  font-size:42px;
+  margin-bottom:40px;
+  color:#5f7146;
 }
 
-/* ABOUT */
+.section-title::after{
+  content:"";
+  display:block;
+  width:70px;
+  height:3px;
+  background:#a8bb87;
+  margin:10px auto 0;
+  border-radius:10px;
+}
+
+/* =========================
+   ABOUT CARD
+========================= */
 
 .about-card{
-
-  background:rgba(255,255,255,0.05);
-
+  background:rgba(255,250,244,0.85);
   padding:40px;
 
-  border-radius:20px;
+  border-radius:22px;
+  border:1px solid #e6ddd0;
+
+  box-shadow:0 15px 40px rgba(95,113,70,0.12);
 
   line-height:1.8;
-
-  backdrop-filter:blur(10px);
 }
 
-/* SKILLS */
+/* =========================
+   SKILLS
+========================= */
 
 .skills-container{
-
   display:flex;
-
   flex-wrap:wrap;
-
-  gap:20px;
-
   justify-content:center;
+  gap:14px;
 }
 
 .skill-box{
+  background:#fffaf4;
+  padding:12px 18px;
 
-  background:#1e293b;
+  border-radius:999px;
 
-  padding:15px 25px;
+  border:1px solid #e6ddd0;
 
-  border-radius:12px;
+  color:#5f7146;
 
   transition:0.3s;
 }
 
 .skill-box:hover{
-
-  transform:translateY(-5px);
-
-  background:#38bdf8;
+  background:#7b8f5c;
+  color:white;
+  transform:translateY(-3px);
 }
 
-/* PROJECTS */
+/* =========================
+   PROJECTS
+========================= */
 
 .projects-container{
-
   display:grid;
-
-  grid-template-columns:
-  repeat(auto-fit,minmax(320px,1fr));
-
-  gap:30px;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:22px;
 }
 
 .project-card{
+  background:linear-gradient(135deg,#fffaf4,#f7f1e8);
 
-  background:rgba(255,255,255,0.05);
+  border-radius:22px;
+  border:1px solid #e6ddd0;
 
-  border:1px solid rgba(255,255,255,0.1);
-
-  border-radius:20px;
-
-  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.06);
 
   transition:0.4s;
-
-  backdrop-filter:blur(10px);
-
-  box-shadow:
-  0 10px 25px rgba(0,0,0,0.3);
 }
 
 .project-card:hover{
-
-  transform:
-  translateY(-12px);
-
-  box-shadow:
-  0 20px 40px
-  rgba(56,189,248,0.35);
-
-  border:
-  1px solid #38bdf8;
+  transform:translateY(-8px);
+  box-shadow:0 18px 40px rgba(95,113,70,0.18);
 }
 
 .project-content{
-  padding:30px;
+  padding:25px;
 }
 
 .project-content h3{
-
-  font-size:28px;
-
-  margin-bottom:15px;
+  color:#3e4038;
+  margin-bottom:10px;
 }
 
 .project-content p{
-
-  color:#cbd5e1;
-
-  line-height:1.7;
-
-  margin-bottom:25px;
+  color:#6d7264;
+  line-height:1.6;
 }
 
-/* TECH STACK */
-
+/* tech tags */
 .tech-stack{
-
   display:flex;
-
   flex-wrap:wrap;
-
-  gap:10px;
-
-  margin-bottom:25px;
+  gap:8px;
+  margin:15px 0;
 }
 
 .tech-stack span{
+  background:#eef2e6;
+  color:#5f7146;
 
-  background:#1e293b;
-
-  padding:8px 15px;
-
-  border-radius:30px;
-
-  color:#38bdf8;
-
-  font-size:14px;
-}
-
-/* PROJECT BUTTONS */
-
-.project-buttons{
-
-  display:flex;
-
-  gap:15px;
-
-  flex-wrap:wrap;
-}
-
-/* CONTACT */
-
-.contact-card{
-
-  background:rgba(255,255,255,0.05);
-
-  padding:40px;
-
+  padding:6px 12px;
   border-radius:20px;
 
+  border:1px solid #d7dfc7;
+
+  font-size:12px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-card{
+  background:rgba(255,250,244,0.85);
+  padding:40px;
+
+  border-radius:22px;
   text-align:center;
+
+  border:1px solid #e6ddd0;
 }
 
-.contact-buttons{
-
-  margin-top:20px;
-
-  display:flex;
-
-  justify-content:center;
-
-  gap:20px;
-
-  flex-wrap:wrap;
-}
-
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-
   text-align:center;
+  padding:25px;
 
-  padding:30px;
+  background:#f5efe4;
+  color:#6d7264;
 
-  background:#1e293b;
+  border-top:1px solid #e6ddd0;
 }
 
-/* RESPONSIVE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:768px){
 
   .hero h1{
-    font-size:40px;
+    font-size:36px;
   }
 
   .hero p{
-    font-size:18px;
+    font-size:16px;
+  }
+
+  .section-title{
+    font-size:30px;
+  }
+
+  section{
+    padding:70px 6%;
   }
 
   nav ul{
-
     display:none;
-
     flex-direction:column;
 
-    background:#1e293b;
-
     position:absolute;
-
     top:70px;
-
     right:20px;
 
-    padding:20px;
+    background:#fffaf4;
+    padding:15px;
 
-    border-radius:10px;
+    border-radius:12px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
   }
 
   nav ul.active{
@@ -411,13 +367,4 @@ footer{
   .menu-toggle{
     display:block;
   }
-
-  section{
-    padding:80px 5%;
-  }
-
-  .section-title{
-    font-size:36px;
-  }
-
-} clean mordern look simple not too dark comforting
+}
